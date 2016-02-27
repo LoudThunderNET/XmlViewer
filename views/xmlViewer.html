@@ -1,0 +1,46 @@
+<div style="overflow:auto; position:absolute; top:0px;left:0px;bottom:0px;right:0px;">
+  <div>
+    <table cellpadding="0" cellspacing="0" style="float:left;">
+      <tr class="rowN fnt ht" ng-repeat="line in Lines" ng-show="line.RowVisible">
+        <td class="rowNum">{{::line.StartRownumber}}</td>
+        <td ng-if="line.HasChildren && !line.LeafClosed"  class="rowMNode pnt ht" ng-click="onNodeClick(line, Lines)">&nbsp;</td>
+        <td ng-if="line.HasChildren && line.LeafClosed"  class="rowPNode pnt ht" ng-click="onNodeClick(line, Lines)">&nbsp;</td>
+        <td ng-if="!line.HasChildren" class="rowNNode ht">&nbsp;</td>
+      </tr>
+      <tr class="rowN fnt ht"><td class="rowNum">&nbsp;</td><td class="rowNNode ht">&nbsp;</td></tr>
+    </table>
+    </div>
+    <div style="overflow:auto;">
+    <table cellpadding="0" cellspacing="0" style="float:left;">
+      <tr class="rowN fnt ht" ng-repeat="line in Lines" ng-show="line.RowVisible">
+        <td class="xmlCont">
+          <div id="row{{line.StartRownumber}}" class="xmlRow ht" ng-show="line.RowVisible">
+            <span class="fnt">
+              <div style="float:left;" ng-bind-html="line.Tab"></div>
+              <div class="elDiv ht" ng-if="line.StartDomNode !== undefined">
+                <div class="ang">&lt;</div><div class="el">{{::line.StartDomNode.localName}}</div>
+                <div class="attDiv" ng-repeat="attr in line.StartDomNode.attributes">
+                  &nbsp;<div class="spAtr">{{::attr.nodeName}}</div><div class="val">=</div><div class="quo">"</div><div class="val">{{::attr.nodeValue}}</div><div class="quo">"</div>
+                </div>
+                <div class="ang">&gt;</div>
+                <div id="endRow{{line.StartRownumber}}" ng-class="{endRowH:!line.LeafClosed, endRowS:line.LeafClosed}">
+                  <div class="elDiv ht" ng-if="line.HasChildren" >...</div>
+                  <div class="elDiv ht" ng-if="line.HasChildren">
+                    <div class="ang">&lt;/</div><div class="el">{{::line.StartDomNode.localName}}</div><div class="ang">&gt;</div>
+                  </div>
+                </div>
+              </div>
+              <div class="elDiv ht" ng-if="line.EndDomNode !== undefined && line.StartDomNode !== undefined">
+                {{::line.EndDomNode.textContent}}
+              </div>
+              <div class="elDiv ht" ng-if="line.EndDomNode !== undefined">
+                <div class="ang">&lt;/</div><div class="el">{{::line.EndDomNode.localName}}</div><div class="ang">&gt;</div>
+              </div>
+            </span>
+          </div>
+        </td>
+      </tr>
+      <tr class="rowN fnt ht" ><td class="xmlCont"><div class="xmlRow ht">&nbsp;</div></td></tr>
+    </table>
+  </div>
+</div>

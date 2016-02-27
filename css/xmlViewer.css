@@ -1,0 +1,141 @@
+.ht{
+  height: 16px;
+  line-height:16px;
+}
+.ang{
+  color:red;
+  float: left;
+  -khtml-user-select: text;
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+.el{
+  color:brown;
+  float: left;
+  -khtml-user-select: text;
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+.elDiv{
+  display:block;
+  float:left;
+  -khtml-user-select: text;
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+.spAtr{
+  margin-left:3px;
+  color:red;
+  float: left;
+  -khtml-user-select: text;
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+.val{
+  color:blue;
+  margin-left:2px;
+  margin-right:2px;
+  float: left;
+  -khtml-user-select: text;
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+.quo{
+  color:black;
+  float: left;
+  -khtml-user-select: text;
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+.attDiv{
+  float: left;
+  line-height: 16px;
+  -khtml-user-select: text;
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+.fnt{
+  font-family:ALSStory, 'Helvetica CY', Arial, sans-serif;
+  font-size:9pt;
+}
+.rowN{
+  width:100%;
+  width:25px;
+}
+.pnt{
+  cursor:pointer;
+}
+.rowNNode{
+  background-color:#EEEEEE;
+  width: 18px;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.rowNum{
+  width:25px;
+  text-align:right;
+  padding-right:2px;
+  background-color: lightgrey;
+  -khtml-user-select: text;
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+.rowPNode{
+  background-color:#EEEEEE;
+  background-image:url('plus.png');
+  background-position:50%;
+  background-repeat:no-repeat;
+  width: 18px;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.rowMNode{
+  background-color:#EEEEEE;
+  background-image:url('minus.png');
+  background-position:50%;
+  background-repeat:no-repeat;
+  width: 18px;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.xmlCont{
+  float:left; 
+  width:100%;
+  list-style-type: none;
+  margin-top: 0px;
+  font-family: ALSStory, 'Helvetica CY', Arial, sans-serif;
+  padding-left: 0px;
+}
+.xmlRow{
+  float:left;
+  width: 100%;
+  -khtml-user-select: text;
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+.xmlRow:hover{
+  float:left;
+  width: 100%;
+  background-color: #EDEDED;
+}
+.endRowH{
+  float:left;display:none;
+}
+.endRowS{
+  float:left;display:block;
+}

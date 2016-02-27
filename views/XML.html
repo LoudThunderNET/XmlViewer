@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app="x">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>UI.Layout : demo </title>
+    <link rel="stylesheet" href="../css/xmlViewer.css"/>
+    <script type="text/javascript">
+      function nodeClick(e, id, self){
+        var element = document.getElementById(id);
+        var action = element.innerText == '+' ? 'close':'open';
+        element.innerText = action=='close'?'-':'+';
+        element.parentElement.children[2].style.display= action == 'close'?'none':'list-item';
+        
+        for(var i = 0; i< self.parentElement.children.length; i++)
+        {
+          if(parseInt(self.innerText) < parseInt(self.parentElement.children[i].innerText))
+            self.parentElement.children[i].style.display = action=='close'?'none':'block';
+        }
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    </script>
+  <head>
+  <body>
+    <div>
+      <div style="float:left; width:30px;background-color:lightgrey;">
+      <div class="rowN fnt" onclick="nodeClick(event, '1', this)">1</div>
+      <div class="rowN fnt" onclick="nodeClick(event, '2', this)">2</div>
+      <div class="rowN fnt" onclick="nodeClick(event, '3', this)">3</div>
+      <div class="rowN fnt" >4</div>
+      <div class="rowN fnt" >5</div>
+      <div class="rowN fnt" onclick="nodeClick(event, '6', this)">6</div>
+      <div class="rowN fnt" >7</div>
+      <div class="rowN fnt" >8</div>
+      <div class="rowN fnt" >9</div>
+    </div>
+    <div style="width: 1000px;float: left;">
+      <div id="node1" style="float:left; width:100%;" ng-if="dom.children.length > 0">
+            <div id="row5" class="elDiv">
+              <span class="ang">&lt;</span><span class="el">{{dom.name}}</span>
+                <div style="display:inline;" ng-repeat="attr in dom.attrinbutes">
+                  <span class="spAtr">{{attr.name}}</span><span class="val">=</span><span class="quo">"</span><span class="val">{{attr.value}}</span><span class="quo">"</span>
+                </div>
+                <div style="display:inline;" ng-repeat="attr in dom.attrinbutes">
+                  <span class="spAtr">{{attr.name}}</span><span class="val">=</span><span class="quo">"</span><span class="val">{{attr.value}}</span><span class="quo">"</span>
+                </div>
+              <span class="ang">&gt;</span>
+            </div>
+            <xml dom="child" ng-repeat="child in dom.children">
+            </xml>
+            <div class="elDiv">
+              <span class="ang">&lt;/</span><span class="el">price</span><span class="ang">&gt;</span>
+            </div>
+      </div>
+      <div id="node1" style="float:left; width:100%;" ng-if="dom.children.length == 0">
+            <div id="row5" class="elDiv">
+              <span class="ang">&lt;</span><span class="el">{{dom.name}}</span>
+                <div style="display:inline;" ng-repeat="attr in dom.attrinbutes">
+                  <span class="spAtr">{{attr.name}}</span><span class="val">=</span><span class="quo">"</span><span class="val">{{attr.value}}</span><span class="quo">"</span>
+                </div>
+                <div style="display:inline;" ng-repeat="attr in dom.attrinbutes">
+                  <span class="spAtr">{{attr.name}}</span><span class="val">=</span><span class="quo">"</span><span class="val">{{attr.value}}</span><span class="quo">"</span>
+                </div>
+              <span class="ang">&gt;</span>
+            </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,1 @@
+var x = angular.module('x',['xmlController', 'xmlViewer']);

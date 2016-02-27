@@ -1,0 +1,29 @@
+<div id="node1" style="float:left; width:100%;" ng-if="dom.children.length > 0">
+    <div id="row5" class="elDiv">
+      <span class="ang">&lt;</span><span class="el">{{dom.localName}}</span>
+        <div style="display:inline;" ng-repeat="attr in dom.attrinbutes">
+          <span class="spAtr">{{attr.nodeName}}</span><span class="val">=</span><span>"</span><span class="val">{{attr.nodeValue}}</span>"
+        </div>
+        <div style="display:inline;" ng-repeat="attr in dom.attrinbutes">
+          <span class="spAtr">{{attr.nodeName}}</span><span class="val">=</span><span>"</span><span class="val">{{attr.nodeValue}}</span>"
+        </div>
+      <span class="ang">&gt;</span>
+    </div>
+    <xml-node dom="child" ng-repeat="child in dom.children">
+    </xml-node>
+    <div class="elDiv">
+      <span class="ang">&lt;/</span><span class="el">price</span><span class="ang">&gt;</span>
+    </div>
+</div>
+<div id="node1" style="float:left; width:100%;" ng-if="dom.children.length == 0">
+    <div id="row5" class="elDiv">
+      <span class="ang">&lt;</span><span class="el">{{dom.localName}}</span>
+        <div style="display:inline;" ng-repeat="attr in dom.attrinbutes">
+          <span class="spAtr">{{attr.nodeName}}</span><span class="val">=</span><span class="quo">"</span><span class="val">{{attr.nodeValue}}</span><span class="quo">"</span>
+        </div>
+        <div style="display:inline;" ng-repeat="attr in dom.attrinbutes">
+          <span class="spAtr">{{attr.nodeName}}</span><span class="val">=</span><span class="quo">"</span><span class="val">{{attr.nodeValue}}</span><span class="quo">"</span>
+        </div>
+      <span class="ang">&gt;</span>
+    </div>
+</div>

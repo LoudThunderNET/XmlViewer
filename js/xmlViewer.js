@@ -1,5 +1,21 @@
 ﻿var xmlController = angular.module("xmlViewer",['ngSanitize'])
 .directive("xmlViewer", ['$timeout', '$compile', function($timeout, $compile){
+  // Forms array that contains information about each XML-node
+             StartRownumber EndRowNumber StartDomNode     EndDomNode
+  //  item1         1            12      <Root>           </Root>          <Root>
+  //  item2         2             6      <SubElement1>    </SubElement1>    <SubElement1>
+  //  item3         3             3      <SubSubElement1/><SubSubElement2/>   <SubSubElement1/>
+  //  item4         4             4      <SubSubElement2/><SubSubElement2/>   <SubSubElement2/>
+  //  item5         5             5      <SubSubElement3/><SubSubElement3/>   <SubSubElement3/>
+  //  item6         6             6                                         </SubElement1>
+  //  item7         7            11                                         <SubElement2>
+  //  item8         8             8                                           <SubSubElement4/>
+  //  item9         9             9                                           <SubSubElement5/>
+  //  item10       10            10                                           <SubSubElement6/>
+  //  item11       11            11                                         </SubElement2>
+  //  item12       12            12                                        </Root>
+  //
+  
   var recurScan = function(dom, curRowNum, lines, level, parent){
     curRowNum ++;
     var linesElement = {
